@@ -1,0 +1,42 @@
+{
+  "name": "dsh-ai-gateway-budget",
+  "version": "0.1.0",
+  "description": "AI Gateway + budget governance for DeepSeek Harness: one admission gate for every model call, session/day/month cost caps, alert/block/degrade policies, cost attribution, and a /gateway control surface",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": ">=22.19.0",
+    "dsh": ">=0.2.2-rc.1 <0.3.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check": "node --check src/index.js && node --check src/gateway.js && node --check src/config.js && node --check src/pricing.js && node --check src/policy.js && node --check src/ledger.js && node --check src/store.js && node --check src/stream.js"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "ai-gateway",
+    "budget",
+    "cost",
+    "token",
+    "governance"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img" aria-label="dsh-ai-gateway-budget — AI Gateway and budget governance for DeepSeek Harness">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#060B14"/>
+      <stop offset="0.55" stop-color="#0A1A28"/>
+      <stop offset="1" stop-color="#0C2433"/>
+    </linearGradient>
+    <linearGradient id="logo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#22D3EE" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#7DD3FC" fill-opacity="0.16"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="320" rx="28" fill="url(#bg)"/>
+  <rect x="1" y="1" width="1278" height="318" rx="27" fill="none" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <rect x="620" y="0" width="660" height="320" rx="28" fill="url(#dots)" opacity="0.55"/>
+  <circle cx="990" cy="160" r="210" fill="url(#glow)" opacity="0.18"/>
+
+  <g font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="80" y="42" width="244" height="34" rx="17" fill="#22D3EE" fill-opacity="0.10" stroke="#22D3EE" stroke-opacity="0.38"/>
+    <text x="100" y="64" fill="#67E8F9" font-size="13" font-weight="600" letter-spacing="1.6">DSH PLUGIN · BUDGET MVP</text>
+
+    <rect x="80" y="104" width="64" height="64" rx="18" fill="url(#logo)"/>
+    <path d="M101 124v24M125 124v24M101 136h24" stroke="#06121F" stroke-width="6" stroke-linecap="round"/>
+    <path d="M117 130l6 6-6 6" fill="none" stroke="#06121F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <text x="168" y="148" fill="#F8FAFC" font-size="62" font-weight="800" letter-spacing="-1.5">AI Gateway</text>
+    <text x="170" y="187" fill="#94A3B8" font-size="24">Budget governance for DeepSeek Harness</text>
+    <text x="80" y="252" fill="#64748B" font-size="16">One admission gate · session / day / month caps · alert / block / degrade</text>
+    <text x="80" y="280" fill="#475569" font-size="14">39 tests · zero runtime dependencies · no build step</text>
+
+    <rect x="742" y="52" width="458" height="216" rx="20" fill="#081521" fill-opacity="0.9" stroke="#FFFFFF" stroke-opacity="0.10"/>
+    <rect x="742" y="52" width="4" height="216" rx="2" fill="url(#bar)" opacity="0.85"/>
+
+    <text x="776" y="92" fill="#7DD3FC" font-size="12" font-weight="700" letter-spacing="2.2">SESSION BUDGET</text>
+    <text x="776" y="136" fill="#F8FAFC" font-size="40" font-weight="800">$1.42</text>
+    <text x="890" y="136" fill="#64748B" font-size="20">/ $2.00</text>
+    <text x="1168" y="136" text-anchor="end" fill="#34D399" font-size="14" font-weight="700">71%</text>
+
+    <rect x="776" y="156" width="394" height="10" rx="5" fill="#1E293B"/>
+    <rect x="776" y="156" width="280" height="10" rx="5" fill="url(#bar)"/>
+
+    <text x="776" y="202" fill="#64748B" font-size="12" letter-spacing="1.2">TODAY</text>
+    <text x="776" y="224" fill="#E2E8F0" font-size="17" font-weight="700">$3.80</text>
+    <text x="876" y="202" fill="#64748B" font-size="12" letter-spacing="1.2">MONTH</text>
+    <text x="876" y="224" fill="#E2E8F0" font-size="17" font-weight="700">$18.20</text>
+    <text x="976" y="202" fill="#64748B" font-size="12" letter-spacing="1.2">CACHE</text>
+    <text x="976" y="224" fill="#E2E8F0" font-size="17" font-weight="700">92%</text>
+    <text x="1076" y="202" fill="#64748B" font-size="12" letter-spacing="1.2">MODEL</text>
+    <text x="1076" y="224" fill="#E2E8F0" font-size="17" font-weight="700">v4-flash</text>
+
+    <circle cx="784" cy="248" r="4" fill="#34D399"/>
+    <text x="796" y="253" fill="#94A3B8" font-size="13">gateway active · policy: block · watermark kept</text>
+  </g>
+</svg>

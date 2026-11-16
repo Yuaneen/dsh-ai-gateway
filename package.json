@@ -11,6 +11,7 @@
   "files": [
     "src",
     "cordis.patch.yml",
+    "docs",
     "README.md",
     "LICENSE"
   ],

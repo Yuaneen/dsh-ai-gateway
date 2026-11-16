@@ -359,3 +359,26 @@ node --test test/*.test.js && npm run check
 ## License
 
 MIT © 2026 DSH Market contributors
+
+## Mermaid probe
+
+```mermaid
+graph TD
+  A1[Agent] --> B1[Provider]
+```
+
+```mermaid
+flowchart LR
+  A2[Agent] --> B2[Provider]
+```
+
+```mermaid
+flowchart LR
+  A3[Agent] --> B3{Budget}
+  B3 -->|block| C3[Blocked]
+```
+
+```mermaid
+flowchart LR
+  A4[Agent] --> B4[(Ledger)]
+```

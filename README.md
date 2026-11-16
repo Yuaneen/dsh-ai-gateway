@@ -46,18 +46,27 @@ DSH 的所有模型调用——主循环、子代理、会话标题、压缩摘�
 
 ```mermaid
 flowchart LR
-    A[Agent loop] --> G[llm stream waterfall]
-    B[Subagent] --> G
-    C[Title and compaction] --> G
-    G --> D{Budget policy}
-    D -->|allow or warn| P[Provider adapter]
-    D -->|block| X[Blocked stream]
-    D -->|degrade| H[Cheaper model]
-    P --> U[usage chunk]
+    subgraph SRC["DSH model calls"]
+        A["Agent loop"]
+        B["Subagent"]
+        C["Title / compaction"]
+    end
+
+    A --> G["llm/stream<br/>waterfall"]
+    B --> G
+    C --> G
+
+    G --> D{"budget policy<br/>session · day · month"}
+
+    D -- "allow / warn" --> P["provider adapter"]
+    D -- "block" --> X["blockedStream<br/>BUDGET_BLOCKED"]
+    D -- "degrade" --> H["cheaper model<br/>same provider"]
+
+    P --> U["usage chunk"]
     H --> U
-    U --> L[(Ledger and pricing)]
+    U --> L[("ledger<br/>+ pricing")]
     L --> D
-    L --> API[Gateway API]
+    L --> API["/gateway<br/>HTTP API"]
 ```
 
 所以这里的「网关」是 **DSH 模型调用的统一准入层**，而不是另起一个 LiteLLM 式的独立代理进程。对外 OpenAI 兼容入口放在 v0.3，它复用同一套预算与账本。
@@ -359,26 +368,3 @@ node --test test/*.test.js && npm run check
 ## License
 
 MIT © 2026 DSH Market contributors
-
-## Mermaid probe
-
-```mermaid
-graph TD
-  A1[Agent] --> B1[Provider]
-```
-
-```mermaid
-flowchart LR
-  A2[Agent] --> B2[Provider]
-```
-
-```mermaid
-flowchart LR
-  A3[Agent] --> B3{Budget}
-  B3 -->|block| C3[Blocked]
-```
-
-```mermaid
-flowchart LR
-  A4[Agent] --> B4[(Ledger)]
-```
